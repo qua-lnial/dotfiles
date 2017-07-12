@@ -1,0 +1,91 @@
+# ls
+alias la="ls -a"
+alias lf="ls -F"
+alias ll="ls -lhG"
+alias lt="tree"
+alias lll="ll|less"
+alias grepall='find . | xargs grep -s -n --color=always -E'
+alias findname='find ./ -name'
+alias ev='vim ~/.vimrc'
+alias open='open ./'
+alias openI='open -a IntelliJ\ IDEA ./'
+alias ij='open -a IntelliJ\ IDEA ./'
+alias openS='open -a SourceTree ./'
+alias gvim='open -a MacVim.app'
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vi='vim'
+alias tmux='/usr/local/bin/tmux'
+alias top='/usr/local/bin/htop'
+alias tail='tail -f'
+alias redis='redis-cli'
+alias aikatu='~/.zsh/startup/startup.sh'
+alias reA='pkill Ame|open -a /Applications/Amethyst.app'
+alias rm='rmtrash'
+
+# process
+alias j="jobs -l"
+#alias 'ps?'='pgrep -l -f'
+alias pk='pkill -f'
+
+# du/df
+alias du="du -h"
+alias df="df -h"
+alias duh="du -h ./ --max-depth=1"
+
+# su
+alias su="su -l"
+
+# peco
+alias P='| peco'
+if [ -x "`which peco`" ]; then
+    alias lp='ls -la | peco'
+    alias tp='top | peco'
+    alias pp='ps aux | peco'
+fi
+
+# tmux
+alias tm='tmux'
+alias ta='tmux attach'
+alias td='tmux detach'
+alias tml='tmux list-window'
+
+alias pon='predict-on'
+alias poff='predict-off'
+alias p='ping -c 4'
+
+alias cp='nocorrect cp -irp'
+alias refe='nocorrect refe'
+alias vagrant='nocorrect vagrant'
+alias ssh='nocorrect ssh'
+
+# git
+alias g='git'
+alias gcm='git commit -m '
+alias gad='git add ./*'
+alias gpu='git push origin :'
+alias gup='git-up'
+alias gs='git status -s'
+alias gl='git log --oneline --graph'
+
+alias java='nocorrect java'
+alias cp='nocorrect cp -irp'
+alias erl='nocorrect erl'
+alias sbcl='nocorrect sbcl'
+alias gosh='nocorrect gosh'
+alias node='nocorrect node'
+alias hg='nocorrect hg --encoding=utf-8'
+
+alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
+alias mu='mux cui-aboutme'
+
+alias ex='exit'
+alias py='python'
+alias gcc='/usr/bin/gcc'
+
+alias fuck='eval $(thefuck $(fc -ln -1))'
+alias FUCK='fuck'
+
+function cd () {
+    builtin cd "$@" && ll
+}
+
